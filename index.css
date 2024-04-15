@@ -1,0 +1,530 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: #8CC461;
+
+}
+
+
+.hidden{
+    display: none;
+}
+
+.scoreBoard {
+    display: flex;
+    border: 0.2em solid white;
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: 4vh;
+    justify-content: space-between;
+    padding: 1em;
+    border-radius: 1em;
+
+
+}
+
+.headings {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 5vh;
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+}
+
+
+.scores {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.scoreBox {
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    height: 18vh;
+    width: 18vh;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    margin: 0 1.5em;
+}
+
+.scoreBox>p {
+    color: #656565;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 2.5vh;
+}
+
+.score {
+    color: #252525;
+    font-weight: 700;
+    margin-top: 0.1em;
+    font-size: 8vh;
+    text-align: center;
+}
+
+
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+}
+
+.btn_rules {
+    color: white;
+    border: 2px solid white;
+    margin: 5px 0.8em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    padding: 0.4vh 2vh;
+    border-radius: 0.3em;
+    height: 6vh;
+    width: 20vh;
+    font-size: 4vh;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.ruleBox {
+
+    position: absolute;
+    background: #004429;
+    bottom: 12vh;
+    flex-wrap: wrap;
+    right: 3vw;
+    border: 0.5vh solid white;
+    width: 40vh;
+    color: white;
+    z-index: 5;
+    padding: 2vh;
+    border-radius: 2vh;
+    padding-left: 4vh;
+    z-index: 1000;
+}
+
+.ruleBox>h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    font-size: 4vh;
+
+}
+
+.ruleBox>ul {
+    list-style: none;
+    padding: 0.6vw;
+
+}
+
+.ruleBox>ul>li {
+
+    display: flex;
+    flex-direction: row;
+    margin: 1vh 0;
+    list-style-position: inside;
+    align-items: center;
+
+}
+
+.ruleBox>ul>li::before {
+
+    content: "\25AA";
+    position: absolute;
+    margin-left: -1.3vw;
+    color: #FFD600;
+    font-size: 2.5vw;
+
+}
+
+.ruleBox>ul>li>p {
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 2vh;
+}
+
+.crossBtn {
+    background: #FF0000;
+    position: absolute;
+    height: 8vh;
+    width: 8vh;
+    right: -4vh;
+    top: -4vh;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5vh solid white;
+    border-radius: 50%;
+    font-family: "Dangrek", sans-serif;
+    font-weight: 400;
+    font-size: 5vh;
+    cursor: pointer;
+}
+
+
+.chooseGame {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 60vw;
+    height: 70vh;
+    margin: 0 auto;
+}
+
+
+.circles {
+    display: inline-block;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stone {
+    position: absolute;
+    border: 3vh solid #0074B6;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+}
+
+.stone>img {
+    width: 60%;
+    height: auto;
+}
+
+.scissor {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+    border: 3vh solid #BD00FF;
+    cursor: pointer;
+
+}
+
+.scissor>img {
+    width: 40%;
+    height: auto;
+}
+
+.paper {
+    position: absolute;
+    border: 3vh solid #FFA943;
+    bottom: 0;
+    right: 15vh;
+    transform: translate(50%, 50%);
+    cursor: pointer;
+}
+
+.paper>img {
+    width: 60%;
+    height: auto;
+}
+
+
+.lines {
+    position: absolute;
+    display: inline-block;
+    width: 30vh;
+    height: 3vh;
+    background-color: #000000A3;
+}
+
+.line1 {
+    transform: rotate(60deg);
+    transform-origin: left center;
+}
+
+.line2 {
+    transform: rotate(-60deg);
+    transform-origin: right center;
+}
+
+.blueprint {
+    height: calc(0.86*30vh);
+    width: 30vh;
+}
+
+.parent {
+    position: relative;
+
+}
+
+
+/* CSS FOR RESULT PAGE */
+
+.resultGame {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    height: 70vh;
+    margin: 0 auto;
+   
+}
+
+
+.resultCircles {
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.resultpaper {
+    border: 1.5vh solid #FFA943;
+}
+.resultstone {
+    border: 1.5vh solid #0074B6;
+}
+.resultscissor {
+    border: 1.5vh solid #BD00FF;
+}
+
+.rippleAnimation{
+    animation-name: ripple;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: easeout;
+}
+
+@keyframes ripple {
+   
+
+     50% {
+       
+        box-shadow: 0 0 0  4vh  rgba(59, 103, 32, 0.3)
+
+
+        , 0 0 0 8vh  #1DA82BC9,0 0 0 12vh   #2E9A2563;
+
+    } 
+
+    100% {
+        box-shadow: 0 0 0 0   #2E9A2563,0 0 0 0  #2E9A2563;  
+    }
+}
+
+
+.resultpaper>img {
+    width: 50%;
+    height: auto;
+}
+.resultstone>img {
+    width: 50%;
+    height: auto;
+}
+.resultscissor>img {
+    width: 50%;
+    height: auto;
+}
+
+.resultBox {
+   
+}
+
+.resultBox>p {
+    font-family: "Roboto", sans-serif;
+    font-size: 2vh;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 3vh 2vh;
+    text-align: center;
+}
+
+.middle {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    letter-spacing: 0.2em;
+    font-weight: 800;
+    margin: 2vh 6vh;
+    text-align: center;
+    margin-top: 12vh;
+    z-index: 100;
+}
+
+.middle>.resultText {
+    font-size: 5vh;
+}
+
+.middle>.resultAgainstText {
+    font-size: 2.5vh;
+}
+
+.btnPlay {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    color: #6B6B6B;
+    background-color: white;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    width: 18vh;
+    border-radius: 0.5em;
+    height: 4.8vh;
+    margin: 3vh 1vh;
+    cursor: pointer;
+    font-size: 1.7vh;
+}
+
+
+/* FINAL HURRAY PAGE */
+
+.hurrayBox{
+    position: relative;
+    width: 45vw;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  
+
+}
+
+.smallestStar{
+position: absolute;
+height: 5vh;
+width: auto;
+}
+.first_star{
+    position: absolute;
+height: 17vh;
+width: auto;
+bottom: 2vw;
+right: 2vw;
+}
+.second_star{
+position: absolute;
+height: 16vh;
+width: auto;
+left: 1vw;
+margin-top:25vh;
+transform: translateY(-50%);
+}
+.third_star{
+position: absolute;
+height: 15vh;
+width: auto;
+top: 0px;
+right: 8vw;
+}
+.fourth_star{
+position: absolute;
+height: 10vh;
+width: auto;
+top: 8vh;
+left: 8vw;
+
+}
+
+
+.fifth_star{
+top: 0px;
+left: 12vw;
+}
+
+.sixth_star{
+ top: 6vh;
+ left: 20vw;
+}
+
+.seventh_star{
+  top: 14vh;
+  right: 4vw;
+}
+
+.eighth_star{
+bottom: 0px;
+left: 12vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hurrayText{
+    font-size: 8vw;
+    letter-spacing:0.1em;
+    text-align: center;
+    margin-top: 5vh;
+
+}
+.winningText{
+    font-size: 3.5vw;
+    letter-spacing: 0.1em;
+}
+
+.trophyBox{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    margin-top: 5vh;
+  
+}
+.trophy{
+height: 30vh;
+width: auto;
+position: absolute;
+bottom: 2px;
+transform: translateX(-50%);
+left: 23vw;
+}
+
+.margin_top_playbtn{
+    margin-top: 6vh;
+    width: 24vh;
+    padding: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
